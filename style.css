@@ -177,3 +177,15 @@ footer {
     text-decoration: none; /* Remove underline */
     color: inherit; /* Use default text color */
 }
+/* Styling for the new Payment Button */
+.buy-now-btn {
+    background-color: #FF5722; /* Bright orange for buying */
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    display: block; /* Puts it on its own line below the other button */
+}
