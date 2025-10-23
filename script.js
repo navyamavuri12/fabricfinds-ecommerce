@@ -1,31 +1,44 @@
-// --- Product Image Switching Logic ---
+// --- Shopping Cart Logic ---
 
-// Get the main image element (the big one)
-var MainImg = document.getElementById("MainImg");
+let cartCount = 0;
+const cartCountElement = document.getElementById('cart-count');
+// Select all Add to Cart buttons on the homepage
+const productButtons = document.querySelectorAll('.product-grid .product button');
+// Select the Add to Cart button on the detail page (product.html)
+const detailButton = document.querySelector('.product-info .add-to-cart-btn');
 
-// Get all the small image elements (the four thumbnails)
-var smallimg = document.getElementsByClassName("small-image");
-
-// Function to handle the click on small images
-function changeMainImage(event) {
-    // 1. Change the source of the main image to the source of the clicked small image
-    MainImg.src = event.target.src;
-
-    // 2. Update the border style (optional, but good for visual feedback)
-    // Remove 'active' class from all small images first
-    for (let i = 0; i < smallimg.length; i++) {
-        smallimg[i].classList.remove('active');
+function updateCartCount() {
+    // This updates the number next to the cart icon
+    if (cartCountElement) {
+        cartCountElement.textContent = cartCount;
     }
-    // Add 'active' class to the clicked small image
-    event.target.classList.add('active');
 }
 
-// Attach the function to every small image when the page loads
-for (let i = 0; i < smallimg.length; i++) {
-    smallimg[i].addEventListener('click', changeMainImage);
+// 1. Logic for buttons on the main homepage
+productButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+        // Prevent clicking the button from navigating to the detail page (since it's inside an <a> tag)
+        e.preventDefault(); 
+        
+        cartCount++;
+        updateCartCount();
+        alert('Item added to cart! Total items: ' + cartCount);
+    });
+});
+
+// 2. Logic for the button on the detail page (product.html)
+// This code will run when you click the button on the second page
+if (detailButton) {
+    detailButton.addEventListener('click', () => {
+        // Assumes the quantity input works (input type="number")
+        const quantityInput = document.querySelector('input[type="number"]');
+        const quantity = parseInt(quantityInput.value) || 1; // Get quantity or default to 1
+        
+        cartCount += quantity;
+        updateCartCount();
+        alert(quantity + ' items added to cart! Total items: ' + cartCount);
+    });
 }
 
-// Set the first image as active when the page first loads
-if (smallimg.length > 0) {
-    smallimg[0].classList.add('active');
-}
+// Ensure the count is correct when the page first loads
+updateCartCount();
