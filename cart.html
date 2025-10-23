@@ -53,3 +53,15 @@
     <script src="script.js"></script>
 </body>
 </html>
+<script src="script.js"></script>
+    <script>
+        // This small block ensures the cart count in the header and the item table are 
+        // updated immediately when the cart page finishes loading.
+        document.addEventListener('DOMContentLoaded', () => {
+            // Note: These functions are defined in your script.js file.
+            updateCartCount(); 
+            displayCartItems(); 
+        });
+    </script>
+</body>
+</html>
