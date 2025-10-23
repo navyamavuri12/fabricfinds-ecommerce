@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ClothKart - Trendy Clothes for Everyone</title>
+    <title>FabricFinds - Trendy Clothes for Everyone</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -27,12 +27,24 @@
     </header>
 
     <section class="categories">
-        <div class="category"><img src="images/men.jpg" alt=""><p>Men</p></div>
-        <div class="category"><img src="images/women.jpg" alt=""><p>Women</p></div>
-        <div class="category"><img src="images/kids.jpeg" alt=""><p>Kids</p></div>
-        <div class="category"><img src="images/formal.jpeg" alt=""><p>Formal</p></div>
-        <div class="category"><img src="images/casual.jpeg" alt=""><p>Casual</p></div>
-        <div class="category"><img src="images/traditional.jpeg" alt=""><p>Traditional</p></div>
+        <a href="#" class="category-link">
+            <div class="category"><img src="images/men.jpg" alt="Men's Collection"><p>Men</p></div>
+        </a>
+        <a href="#" class="category-link">
+            <div class="category"><img src="images/women.jpg" alt="Women's Collection"><p>Women</p></div>
+        </a>
+        <a href="#" class="category-link">
+            <div class="category"><img src="images/kids.jpg" alt="Kids' Collection"><p>Kids</p></div>
+        </a>
+        <a href="#" class="category-link">
+            <div class="category"><img src="images/formal.jpg" alt="Formal Wear"><p>Formal</p></div>
+        </a>
+        <a href="#" class="category-link">
+            <div class="category"><img src="images/casual.jpg" alt="Casual Wear"><p>Casual</p></div>
+        </a>
+        <a href="#" class="category-link">
+            <div class="category"><img src="images/traditional.jpg" alt="Traditional Wear"><p>Traditional</p></div>
+        </a>
     </section>
 
     <section class="hero">
@@ -46,24 +58,28 @@
         <div class="product-grid">
             <a href="product.html" class="product-link">
                 <div class="product">
-                    <img src="images/tshirt.jpg" alt="">
+                    <img src="images/tshirt.jpg" alt="Stylish T-Shirt">
                     <h3>Stylish T-Shirt</h3>
                     <p>₹499</p>
                     <button>Add to Cart</button>
                 </div>
             </a>
             <div class="product">
-                <img src="images/dress.jpeg" alt="">
+                <img src="images/dress.jpg" alt="Summer Dress">
                 <h3>Summer Dress</h3>
                 <p>₹899</p>
                 <button>Add to Cart</button>
             </div>
             <div class="product">
-                <img src="images/hoodie.jpg" alt="">
+                <img src="images/hoodie.jpg" alt="Cool Hoodie">
                 <h3>Cool Hoodie</h3>
                 <p>₹1199</p>
                 <button>Add to Cart</button>
             </div>
+        </div>
+        
+        <div style="margin-top: 30px; text-align: center;"> 
+            <button class="hero button" onclick="window.location.href='#'">View All Products</button>
         </div>
     </section>
 
