@@ -114,16 +114,21 @@ function displayCartItems() {
 // Function to update item quantity from the input box on cart.html
 function updateQuantity(input) {
     const itemId = input.getAttribute('data-item-id');
-    const newQuantity = parseInt(input.value);
+    // 1. Ensure the new quantity is at least 1 (clamping the value)
+    const newQuantity = Math.max(1, parseInt(input.value) || 1); 
+    
+    // 2. Update the input box value back to 1 if the user typed 0 or a negative number
+    input.value = newQuantity; 
 
     const item = cart.find(i => i.id === itemId);
-    if (item && newQuantity > 0) {
+    if (item) {
         item.quantity = newQuantity;
         saveCart();
         updateCartCount();
-        displayCartItems(); // Re-render the cart table
+        displayCartItems(); // Re-render the cart table to show new totals
     } else if (newQuantity <= 0) {
-        removeItem(itemId);
+        // This case handles removal if the quantity ever accidentally drops to 0
+        removeItem(itemId); 
     }
 }
 
