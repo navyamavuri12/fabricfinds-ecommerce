@@ -11,14 +11,14 @@
         <div class="logo">👕 FabricFinds</div>
         <nav>
             <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
             <a href="#">Men</a>
             <a href="#">Women</a>
             <a href="#">Kids</a>
-            <a href="#">Shop</a>
             <a href="#">Offers</a>
         </nav>
         <div class="icons">
-            <input type="text" placeholder="Search...">
+            <input type="text" id="product-search" onkeyup="filterProducts()" placeholder="Search Products...">
             <button>🔍</button>
             <a href="cart.html">
                 <button>🛒 <span id="cart-count">0</span></button>
@@ -45,20 +45,26 @@
         </table>
 
         <div id="cart-summary" style="max-width: 400px; float: right; margin-top: 30px; padding: 20px; border: 1px solid #007f4e; border-radius: 10px;">
+            <p style="text-align: right; color: #444; font-size: 14px; margin-bottom: 5px;">
+               Shipping calculated at checkout.
+            </p>
             <h3>Cart Total: <span id="cart-total">₹0.00</span></h3>
-            <button class="buy-now-btn" style="width: 100%; margin-top: 15px;" onclick="alert('Proceeding to Checkout!')">Proceed to Checkout</button>
+            
+            <a href="https://rzp.io/l/payment-example" target="_blank" style="text-decoration: none;">
+                <button class="buy-now-btn" style="width: 100%; margin-top: 15px;">
+                    Proceed to Checkout
+                </button>
+            </a>
+            <p style="text-align: center; font-size: 12px; margin-top: 5px; color: #666;">
+                Payments processed securely by Razorpay/PayPal.
+            </p>
         </div>
     </section>
 
     <script src="script.js"></script>
-</body>
-</html>
-<script src="script.js"></script>
     <script>
-        // This small block ensures the cart count in the header and the item table are 
-        // updated immediately when the cart page finishes loading.
+        // This block ensures the cart data loads immediately on the cart page.
         document.addEventListener('DOMContentLoaded', () => {
-            // Note: These functions are defined in your script.js file.
             updateCartCount(); 
             displayCartItems(); 
         });
