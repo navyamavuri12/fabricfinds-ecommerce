@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop All Products - FabricFinds</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">👕 FabricFinds</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="#">Men</a>
+            <a href="#">Women</a>
+            <a href="#">Kids</a>
+            <a href="#">Offers</a>
+        </nav>
+        <div class="icons">
+            <input type="text" id="product-search" onkeyup="filterProducts()" placeholder="Search Products...">
+            <button>🔍</button>
+            <a href="cart.html">
+                <button>🛒 <span id="cart-count">0</span></button>
+            </a>
+            <button>👤</button>
+        </div>
+    </header>
+    
+    <section class="shop-container" style="display: flex; padding: 40px 20px; gap: 30px; max-width: 1400px; margin: auto;">
+        
+        <aside class="sidebar" style="flex-basis: 25%; padding: 20px; border-right: 1px solid #eee;">
+            <h3>Filter By</h3>
+            <div style="margin-bottom: 20px;">
+                <h4>Category</h4>
+                <label><input type="checkbox"> T-Shirts</label><br>
+                <label><input type="checkbox"> Dresses</label><br>
+                <label><input type="checkbox"> Jeans</label><br>
+                <label><input type="checkbox"> Formal</label><br>
+            </div>
+            
+            <div style="margin-bottom: 20px;">
+                <h4>Price Range</h4>
+                <input type="range" min="100" max="5000" value="5000" style="width: 100%;">
+                <p>Up to ₹5000</p>
+            </div>
+
+            <button class="hero button">Apply Filters</button>
+        </aside>
+
+        <main class="products-list" style="flex-basis: 75%;">
+            <h2>All Products (Showing 24 Items)</h2>
+            
+            <div class="product-grid" style="justify-content: start; gap: 20px;">
+                <a href="product.html" class="product-link"><div class="product"><img src="images/tshirt.jpg" alt="T-Shirt"><h3>Basic T-Shirt</h3><p>₹499</p><button class="add-to-cart-btn" data-product-id="TShirt01" data-name="Basic T-Shirt" data-price="499">Add to Cart</button></div></a>
+                <a href="product.html" class="product-link"><div class="product"><img src="images/dress.jpg" alt="Dress"><h3>Summer Dress</h3><p>₹899</p><button class="add-to-cart-btn" data-product-id="Dress01" data-name="Summer Dress" data-price="899">Add to Cart</button></div></a>
+                <a href="product.html" class="product-link"><div class="product"><img src="images/hoodie.jpg" alt="Hoodie"><h3>Cool Hoodie</h3><p>₹1199</p><button class="add-to-cart-btn" data-product-id="Hoodie01" data-name="Cool Hoodie" data-price="1199">Add to Cart</button></div></a>
+                
+                <a href="product.html" class="product-link"><div class="product"><img src="images/jeans.jpg" alt="Jeans"><h3>Slim-Fit Jeans</h3><p>₹1999</p><button class="add-to-cart-btn" data-product-id="Jeans01" data-name="Slim Jeans" data-price="1999">Add to Cart</button></div></a>
+                <a href="product.html" class="product-link"><div class="product"><img src="images/skirt.jpg" alt="Skirt"><h3>Flowy Skirt</h3><p>₹799</p><button class="add-to-cart-btn" data-product-id="Skirt01" data-name="Flowy Skirt" data-price="799">Add to Cart</button></div></a>
+                <a href="product.html" class="product-link"><div class="product"><img src="images/shoes.jpg" alt="Shoes"><h3>Running Shoes</h3><p>₹3499</p><button class="add-to-cart-btn" data-product-id="Shoes01" data-name="Running Shoes" data-price="3499">Add to Cart</button></div></a>
+
+                <a href="product.html" class="product-link"><div class="product"><img src="images/tshirt.jpg" alt="T-Shirt"><h3>Graphic Tee</h3><p>₹599</p><button class="add-to-cart-btn" data-product-id="TShirt03" data-name="Graphic Tee" data-price="599">Add to Cart</button></div></a>
+                <a href="product.html" class="product-link"><div class="product"><img src="images/dress.jpg" alt="Dress"><h3>Evening Dress</h3><p>₹1599</p><button class="add-to-cart-btn" data-product-id="Dress03" data-name="Evening Dress" data-price="1599">Add to Cart</button></div></a>
+                <a href="product.html" class="product-link"><div class="product"><img src="images/hoodie.jpg" alt="Hoodie"><h3>Plaid Hoodie</h3><p>₹1299</p><button class="add-to-cart-btn" data-product-id="Hoodie03" data-name="Plaid Hoodie" data-price="1299">Add to Cart</button></div></a>
+                <a href="product.html" class="product-link"><div class="product"><img src="images/jeans.jpg" alt="Jeans"><h3>Wide-Leg Jeans</h3><p>₹2199</p><button class="add-to-cart-btn" data-product-id="Jeans03" data-name="Wide-Leg Jeans" data-price="2199">Add to Cart</button></div></a>
+                <a href="product.html" class="product-link"><div class="product"><img src="images/skirt.jpg" alt="Skirt"><h3>Denim Skirt</h3><p>₹999</p><button class="add-to-cart-btn" data-product-id="Skirt03" data-name="Denim Skirt" data-price="999">Add to Cart</button></div></a>
+                <a href="product.html" class="product-link"><div class="product"><img src="images/shoes.jpg" alt="Shoes"><h3>Formal Loafers</h3><p>₹4500</p><button class="add-to-cart-btn" data-product-id="Shoes03" data-name="Formal Loafers" data-price="4500">Add to Cart</button></div></a>
+                
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px; margin-bottom: 20px;">
+                <button class="hero button">← Previous</button>
+                <span style="margin: 0 15px;">Page 1 of 4</span>
+                <button class="hero button">Next →</button>
+            </div>
+        </main>
+    </section>
+    
+    <footer>
+        <p>© 2026 FabricFinds | Designed by Navya 💚</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Run cart initialization on this page
+        document.addEventListener('DOMContentLoaded', () => {
+            updateCartCount(); 
+        });
+    </script>
+</body>
+</html>
