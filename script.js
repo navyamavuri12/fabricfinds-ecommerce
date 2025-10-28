@@ -148,3 +148,13 @@ updateCartCount(); // Run once to display the count on all pages
 if (window.location.pathname.endsWith('cart.html')) {
     displayCartItems();
 }
+// --- PWA Service Worker Registration ---
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/fabricfinds-ecommerce/service-worker.js').then(registration => {
+      console.log('SW registered: ', registration);
+    }).catch(registrationError => {
+      console.log('SW registration failed: ', registrationError);
+    });
+  });
+}
